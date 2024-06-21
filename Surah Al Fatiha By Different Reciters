@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surah Al-Fatiha with Different Reciters</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        .audio {
+            margin: 20px 0;
+        }
+        h2 {
+            margin: 20px 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Surah Al-Fatiha with Different Reciters</h1>
+
+        <!-- Example of embedding an audio file for different reciters -->
+
+        <div class="audio">
+            <h2>Reciter 1: Sheikh Yasser Al Dosari Ibn Rashid</h2>
+            <audio controls class="audio-control">
+                <source src="001.mp3" type="audio/mpeg">
+            </audio>
+            <br><a href="001.mp3"download>Download mp3</a>
+        </div>
+
+        <div class="audio">
+            <h2>Reciter 2: Sheikh Abdul Basit Abdus Samad</h2>
+            <audio controls class="audio-control">"
+                <source src="001 3.mp3" type="audio/mpeg">
+            </audio>
+            <br><a href="001 3.mp3"download>Download mp3</a>
+        </div>
+
+        <div class="audio">
+            <h2>Reciter 3: Sheikh Saad Al-Ghamdi</h2>
+            <audio controls class="audio control">
+                <source src="001 2.mp3" type="audio/mpeg">
+            </audio>
+            <br><a href="001 2.mp3"download>Download mp3</a>
+        </div>
+
+        <div class="audio">
+            <h2>Reciter 4: Sheikh Khalid Al Jalil</h2>
+                <audio controls class="audio-control">
+                <source src="001 4.mp3" type="audio/mpeg">
+            </audio>
+            <br><a href="001 4.mp3"download>Download mp3</a>
+        </div>
+
+        <div class="audio">
+            <h2>Reciter 5: Sheikh Hazaa Al Balushi</h2>
+                <audio controls class="audio-control">
+                <source src="001 5.mp3" type="audio/mpeg">
+            </audio>
+            <br><a href="001 5.mp3"download>Download mp3</a>
+        </div>
+
+        <div class="audio">
+            <h2>Reciter 6: Sheikh Fares Abbad</h2>
+                <audio controls class="audio-control">
+                <source src="001 6.mp3" type="audio/mpeg">
+            </audio>
+            <br><a href="001 6.mp3"download>Download mp3</a>
+        </div>
+
+        <div class="audio">
+            <h2>Reciter 7: Sheikh Idris Abkar</h2>
+                <audio controls class="audio-control">
+                <source src="idriss-abkar-001-muslimcentral.com.mp3" type="audio/mpeg">
+            </audio>
+            <br><a href="idriss-abkar-001-muslimcentral.com.mp3"download>Download mp3</a>
+        </div>
+
+        <div class="audio">
+            <h2>Reciter 8: Sheikh Ahmad El Ajmy</h2>
+                <audio controls class="audio-control">
+                <source src="001 8.mp3" type="audio/mpeg">
+            </audio>
+            <br><a href="001 8.mp3"download>Download mp3</a>
+        </div>
+
+        <div class="audio">
+            <h2>Reciter 9: Sheikh Wadih Al Yamani</h2>
+                <audio controls class="audio-control">
+                <source src="001 7.mp3" type="audio/mpeg">
+            </audio>
+            <br><a href="001 7.mp3"download>Download mp3</a>
+        </div>
+
+        <div class="audio">
+            <h2>Reciter 10: Sheikh Maher Al Muaiqly</h2>
+                <audio controls class="audio-control">
+                <source src="001 9.mp3" type="audio/mpeg">
+            </audio>
+            <br><a href="001 9.mp3"download>Download mp3</a>
+        </div>
+
+        <div class="audio">
+            <h2>Reciter 11: Sheikh Raad Muhammad Al Kurdi</h2>
+                <audio controls class="audio-control">
+                <source src="001 10.mp3" type="audio/mpeg">
+            </audio>
+            <br><a href="001 10.mp3"download>Download mp3</a>
+        </div>
+
+        <div class="audio">
+            <h2>Reciter 12: Sheikh Mishary Rashid Alafasy</h2>
+                <audio controls class="audio-control">
+                <source src="mishary-rashid-alafasy-001-muslimcentral.com.mp3"type="audio/mpeg">
+            </audio>
+            <br><a href="mishary-rashid-alafasy-001-muslimcentral.com.mp3"download>Download mp3</a>
+        </div>
+
+        <a href="index.html">Refresh</a>
+    </div>
+</body>
+</html>
+
+<script>
+    // JavaScript to ensure only one audio file is played at a time
+    document.addEventListener('DOMContentLoaded', function() {
+        const audios = document.querySelectorAll('.audio-control');
+        console.log('Total audio elements:', audios.length); // Log total number of audio elements
+        
+        audios.forEach((audio, index) => {
+            console.log('Audio element', index, 'initialized');
+            audio.addEventListener('play', () => {
+                console.log('Audio element', index, 'is playing');
+                audios.forEach((otherAudio, otherIndex) => {
+                    if (otherAudio !== audio) {
+                        console.log('Pausing audio element', otherIndex);
+                        otherAudio.pause();
+                    } else {
+                        console.log('This audio element', index, 'is the one currently playing.');
+                    }
+                });
+            });
+        });
+    });
+</script>
